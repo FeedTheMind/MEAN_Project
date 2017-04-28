@@ -1,0 +1,21 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgba(0, 0, 0, .7);
+}
+
+.container {
+  max-width: 750px;
+  background: linen;
+  margin: 0 auto;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+p {
+  font-size: 1.2em;
+}
