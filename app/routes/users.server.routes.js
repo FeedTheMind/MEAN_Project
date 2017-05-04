@@ -24,6 +24,28 @@ module.exports = function (app) {
     successRedirect: '/'
   }));
 
+  app.get('/oauth/twitter', passport.authenticate('twitter', {
+    failureRedirect: '/signin'
+  }));
+
+  app.get('/oauth/twitter/callback', passport.authenticate('twitter', {
+    failureRedirect: '/signin',
+    successRedirect: '/'
+  }));
+
+  app.get('/oauth/google', passport.authenticate('google', {
+  failureRedirect: '/signin',
+    scope: [
+      'https://www.googleapis.com/auth/userinfo.profile',
+      'https://www.googleapis.com/auth/userinfo.email'
+    ],
+  }));
+
+  app.get('/oauth/google/callback', passport.authenticate('google', {
+    failureRedirect: '/signin',
+    successRedirect: '/'
+  }));
+
   app.get('/signout', users.signout);
 
   app.route('/users')
