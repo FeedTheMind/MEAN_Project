@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:ng='http://angularjs.org'>
   <head>
     <title><%= title %></title> <!-- <%= %> tell ejs engine where to render the template variables (title, in this case) -->
     <link rel='stylesheet' type='text/css' href='css/styles.css'>
@@ -10,12 +10,21 @@
       <h2>Hello, <%= userFullName %></h2>
       <a href='/signout'>Sign Out</a>
       <% } else { %>
-        <a href='/signup'>Sign Up</a>
-        <a href='/signin'>Sign In</a>
+        <a class='aStyle' href='/signup'>Sign Up</a>
+        <a class='aStyle' href='/signin'>Sign In</a>
       <% } %>
       <h1><%= title.toUpperCase() %></h1>
       <img src='img/logo.png' alt='Logo'>
       <p>This is the start of a MEAN project. Don't know what "MEAN" is? No sweat! It's an acronym that stands for Mongo, Express, Angular, and Node. What's so special about it? Well, each of the said web technologies has something that links them all: JavaScript! More to come . . .</p>
+
+      <p>Below are two text inputs. These demonstrate Angular's two-way data binding. Type in one to update the other.</p>
+      <section ng-view></section>
     </div>
+    <script src='/lib/angular/angular.js'></script>
+    <script src='/lib/angular-route/angular-route.js'></script>
+    <script src='/example/example.client.module.js'></script>
+    <script src='/example/controllers/example.client.controller.js'></script>
+    <script src='/example/config/example.client.routes.js'></script>
+    <script src='/app.js'></script>
   </body>
 </html>

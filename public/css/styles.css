@@ -1,11 +1,10 @@
 *, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 body {
   background: rgba(0, 0, 0, .7);
+  font-family: Georgia, sans-serif;
 }
 
 .container {
@@ -18,4 +17,21 @@ body {
 
 p {
   font-size: 1.2em;
+  line-height: 1.2;
+}
+
+section input {
+  font-weight: bold;
+  font-family: Georgia, sans-serif;
+}
+
+.aStyle {
+  text-decoration: none;
+  padding: 5px; 
+  -webkit-transition: color .4s; 
+  transition: color .4s;
+}
+
+.aStyle:hover {
+  color: tomato;
 }
