@@ -11,6 +11,8 @@ var config = require('./config'),
 module.exports = function () {
   var app = express();
 
+  app.use(express.static('./public')); // Takes one argument to determine location of static folder; also, place below call for the routing file
+
   if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
   } else if (process.env.NODE_ENV === 'production') {
@@ -41,8 +43,6 @@ module.exports = function () {
 
   require('../app/routes/index.server.routes.js')(app);
   require('../app/routes/users.server.routes.js')(app);
-
-   app.use(express.static('./public')); // Takes one argument to determine location of static folder; also, place below call for the routing file
    
   return app;
 };

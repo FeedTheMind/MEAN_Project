@@ -2,12 +2,11 @@
 <html xmlns:ng='http://angularjs.org'>
   <head>
     <title><%= title %></title> <!-- <%= %> tell ejs engine where to render the template variables (title, in this case) -->
-    <link rel='stylesheet' type='text/css' href='css/styles.css'>
+    <link rel='stylesheet' type='text/css' href='/css/styles.css'>
   </head>
   <body>
     <div class='container'>
-      <% if (userFullName) { %>
-      <h2>Hello, <%= userFullName %></h2>
+      <% if (user) { %>
       <a href='/signout'>Sign Out</a>
       <% } else { %>
         <a class='aStyle' href='/signup'>Sign Up</a>
@@ -20,11 +19,18 @@
       <p>Below are two text inputs. These demonstrate Angular's two-way data binding. Type in one to update the other.</p>
       <section ng-view></section>
     </div>
-    <script src='/lib/angular/angular.js'></script>
-    <script src='/lib/angular-route/angular-route.js'></script>
-    <script src='/example/example.client.module.js'></script>
-    <script src='/example/controllers/example.client.controller.js'></script>
-    <script src='/example/config/example.client.routes.js'></script>
-    <script src='/app.js'></script>
+    <script type='text/javascript'>
+       window.user = <%- user || 'null' %>;
+    </script>
+    <script type='text/javascript' src='/lib/angular/angular.js'></script>
+    <script type='text/javascript' src='/lib/angular-route/angular-route.js'></script>
+    
+    <script type='text/javascript' src='/example/example.client.module.js'></script>
+    <script type='text/javascript' src='/example/controllers/example.client.controller.js'></script>
+    <script type='text/javascript' src='/example/config/example.client.routes.js'></script>
+
+    <script type='text/javascript' src='/users/users.client.module.js'></script>
+    <script type='text/javascript' src='/users/services/authentication.client.service.js'></script>
+    <script type='text/javascript' src='/app.js'></script>
   </body>
 </html>
