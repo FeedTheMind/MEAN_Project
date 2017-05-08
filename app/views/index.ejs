@@ -6,17 +6,16 @@
   </head>
   <body>
     <div class='container'>
-      <% if (user) { %>
+      <!--<% if (user) { %>
       <a href='/signout'>Sign Out</a>
       <% } else { %>
         <a class='aStyle' href='/signup'>Sign Up</a>
         <a class='aStyle' href='/signin'>Sign In</a>
-      <% } %>
+      <% } %>-->
       <h1><%= title.toUpperCase() %></h1>
       <img src='img/logo.png' alt='Logo'>
       <p>This is the start of a MEAN project. Don't know what "MEAN" is? No sweat! It's an acronym that stands for Mongo, Express, Angular, and Node. What's so special about it? Well, each of the said web technologies has something that links them all: JavaScript! More to come . . .</p>
-
-      <p>Below are two text inputs. These demonstrate Angular's two-way data binding. Type in one to update the other.</p>
+      
       <section ng-view></section>
     </div>
     <script type='text/javascript'>
@@ -24,6 +23,11 @@
     </script>
     <script type='text/javascript' src='/lib/angular/angular.js'></script>
     <script type='text/javascript' src='/lib/angular-route/angular-route.js'></script>
+    <script type='text/javascript' src='/lib/angular-resource/angular-resource.js'></script>
+    <script type="text/javascript" src="/articles/articles.client.module.js"></script>
+    <script type="text/javascript" src="/articles/controllers/articles.client.controller.js"></script>
+    <script type="text/javascript" src="/articles/services/articles.client.services.js"></script>
+    <script type="text/javascript" src="/articles/config/articles.client.routes.js"></script>
     
     <script type='text/javascript' src='/example/example.client.module.js'></script>
     <script type='text/javascript' src='/example/controllers/example.client.controller.js'></script>
